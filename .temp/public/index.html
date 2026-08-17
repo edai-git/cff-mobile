@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" manifest="cache.manifest">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSSFontFace exploit</title>
+  <link rel="stylesheet" href="includes/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-main">
+        <h1 class="title">CSSFontFace UAF Exploit</h1>
+        <div class="badge">
+          <span class="pulse-dot"></span>
+          <span class="badge-text">WebKit &bull; PS4 6.00 &ndash; 11.02</span>
+        </div>
+      </div>
+      <div class="ua-card">
+        <span class="ua-icon">🎮</span>
+        <h3 id="UA">Running on:</h3>
+      </div>
+    </header>
+
+    <!-- Control Section -->
+    <section class="control-section">
+      <!-- Exploit Strategy Selection -->
+      <div class="card kernel-card">
+        <div class="card-header">
+          <span class="card-title">Kernel Exploit Chain</span>
+          <span class="card-badge">Target Select</span>
+        </div>
+        <form id="kernel-options" class="kernel-options">
+          <label class="radio-card" for="netctrl-exploit">
+            <input type="radio" name="kernel" id="netctrl-exploit" value="netctrl">
+            <span class="radio-custom"></span>
+            <div class="radio-info">
+              <span class="radio-title">NetCtrl</span>
+              <span class="radio-desc">Kernel UAF &bull; Triple-Free</span>
+            </div>
+          </label>
+
+          <label class="radio-card" for="lapse-exploit">
+            <input type="radio" name="kernel" id="lapse-exploit" value="lapse">
+            <span class="radio-custom"></span>
+            <div class="radio-info">
+              <span class="radio-title">Lapse</span>
+              <span class="radio-desc">IPv6 Pktopts &bull; AIO Batch</span>
+            </div>
+          </label>
+        </form>
+      </div>
+
+      <!-- Action Panel -->
+      <div class="card action-card">
+        <div class="card-header">
+          <span class="card-title">Execution Controls</span>
+          <span class="card-badge">Actions</span>
+        </div>
+        
+        <div class="action-body">
+          <div class="btn-group">
+            <button id="jeilbrek" class="primary-btn">
+              <span class="btn-icon">⚡</span>
+              <span class="btn-label">Run Jailbreak</span>
+            </button>
+            <button id="reloadBtn" class="secondary-btn" title="Reload / Restart page">
+              <span class="btn-icon">🔄</span>
+              <span class="btn-label">Reload</span>
+            </button>
+          </div>
+
+          <div class="autoJb">
+            <label class="switch-wrap" for="autoJbInput">
+              <div class="switch">
+                <input class="mt-2" id="autoJbInput" type="checkbox">
+                <span class="slider"></span>
+              </div>
+              <span id="autoJbLabel" class="switch-label">Auto Jailbreak</span>
+            </label>
+
+            <div class="delay-wrap">
+              <label for="autoJbDelayInput" class="delay-label">Delay:</label>
+              <input type="number" id="autoJbDelayInput" class="delay-input" min="1" max="99" value="5" title="Auto Jailbreak timer delay in seconds">
+              <span class="delay-unit">s</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Output & Media Layout -->
+    <main class="main-layout">
+      <!-- Media Mascot Box -->
+      <div class="media-box">
+        <div class="media-card">
+          <div class="media-img-wrap">
+            <img src="includes/cat.jpg" alt="Exploit Mascot">
+          </div>
+          <div class="media-footer">
+            <span class="status-indicator"></span>
+            <span class="media-text">Ready for Execution</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terminal Console Output -->
+      <div class="terminal-box">
+        <div class="terminal-header">
+          <div class="terminal-controls">
+            <span class="t-dot red"></span>
+            <span class="t-dot yellow"></span>
+            <span class="t-dot green"></span>
+          </div>
+          <span class="terminal-title">System Log &bull; Live Exploit Terminal</span>
+          <span class="terminal-tag">TTY</span>
+        </div>
+        <pre id="console">Ready. Awaiting execution...
+</pre>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Research &amp; Exploit by <strong>ufm42</strong> &bull; <strong>Nathan Fargo</strong> (@ntfargo) &bull; <strong>Dr.Yenyen</strong></p>
+    </footer>
+  </div>
+
+  <script src="src/main.js"></script>
+  <script src="includes/script.js"></script>
+</body>
+</html>
