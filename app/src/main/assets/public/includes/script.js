@@ -6,7 +6,7 @@ const jeilbrekBtn = document.getElementById('jeilbrek');
 const UAElement = document.getElementById("UA");
 
 // Auto Jailbreak Config
-const autoJbDefault = true;
+const autoJbDefault = false;
 const storedAutoJb = localStorage.getItem("autoJb");
 let autoJbValue = storedAutoJb !== null ? storedAutoJb === "true" : autoJbDefault;
 
